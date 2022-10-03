@@ -1,0 +1,67 @@
+﻿@model CustomerManagement.Models.CustomerTable
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Customer Details</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 card">
+        <form asp-action="Edit" asp-method="POST">
+
+
+            <div>
+                <p>
+                    Customer ID:<input disabled asp-for="@Model.CustId" />
+                    <input hidden asp-for="@Model.CustId" />
+                </p>
+            </div>
+
+
+
+            <div>
+                <p>
+                    Customer Name <input asp-for="@Model.CustName" placeholder="Enter the name" />
+                </p>
+            </div>
+
+
+
+            <div>
+                <p>
+                    Customer Address<input asp-for="@Model.CustAddress" placeholder="Enter the Address" />
+                </p>
+            </div>
+
+
+            <div>
+                <p>
+                    Number of books borrowed <input asp-for="@Model.CustBarrowedBooks" />
+                </p>
+            </div>
+
+
+            <div>
+                <p>
+                    Customer Photo <input asp-for="@Model.CustPhoto" />
+                </p>
+            </div>
+
+            <button class="btn btn-danger">Submit</button>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

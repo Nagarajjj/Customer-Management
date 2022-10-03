@@ -1,0 +1,38 @@
+﻿@model CustomerManagement.Models.CustomerTable
+@{
+    ViewData["Title"] = "AddNew";
+}
+
+<h1 style="color:forestgreen">Add New Customer</h1>
+
+<div class="row">
+    
+    <div style="padding-top:20px" class="col-md-7 card">
+        <form asp-action="AddNew" asp-method="POST">
+        
+            <div>
+                <p>Customer name  <input asp-for="@Model.CustName" placeholder="Enter  Customer Name" /></p>
+               
+            </div>
+            <div>
+                <p>Customer Adderess  <input asp-for="@Model.CustAddress" placeholder="Enter Customer Adderess" />
+                </p>
+                
+            </div>
+
+            <div>
+                <p>Brrowed Book  <input asp-for="@Model.CustBarrowedBooks" placeholder="Enter Brrowed Book" /></p>
+                
+            </div>
+            <div>
+                <p>Customer Photo  <input asp-for="@Model.CustPhoto" /></p>
+               
+            </div>
+            <button  type="submit" class="btn btn-info">Submit</button>
+            <br />
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CustomerManagement.Models.CustomerTable>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:forestgreen">Customers List</h1>
+<hr />
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="card col-md-5 ,-2">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img style="width:150px; height:150px" class="card-img" src="@item.CustPhoto" />
+                    </div>
+                    <br />
+                    <div class="col-md-8 card m-2">
+                        
+                        <h3 class="card-title"> @item.CustName</h3>
+                        <hr />
+                        <p class="card-text">Address: @item.CustAddress</p>
+                        <p class="card-text">Borrowed Books: @item.CustBarrowedBooks</p>
+                        <p>
+                            <a asp-action="Edit" asp-route-id="@item.CustId" class="btn btn-info" >Edit</a>
+                        </p>
+                        <p>
+                            <a asp-action="Delete" asp-route-id="@item.CustId" class="btn btn-info" style="display:inline">delete</a>
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            
+        }
+    </div>
+</div>
